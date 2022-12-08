@@ -17,6 +17,7 @@ Animal::Animal()
 {
 	debugPrint("Animal default constructor called", BLU);
 	brain = NULL;
+	type = "Generic Animal (TM)";
 }
 
 Animal::Animal(const Animal& src)
