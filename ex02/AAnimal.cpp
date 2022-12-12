@@ -13,6 +13,19 @@
 #include "AAnimal.hpp"
 #include "debugPrint.hpp"
 
+AAnimal::AAnimal()
+{
+	debugPrint("AAnimal default constructor called", BLU);
+	brain = NULL;
+	type = "Generic AAnimal (TM)";
+}
+
+AAnimal::AAnimal(const AAnimal& src)
+{
+	debugPrint("AAnimal copy constructor called", BLU);
+	*this = src;
+}
+
 AAnimal::~AAnimal()
 {
 	debugPrint("AAnimal destructor called", BLU);

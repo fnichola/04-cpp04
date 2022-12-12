@@ -20,6 +20,8 @@
 class AAnimal
 {
 public:
+	AAnimal();
+	AAnimal(const AAnimal& src);
 	virtual ~AAnimal() = 0;
 	AAnimal& operator=(const AAnimal& rhs);
 
