@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 01:47:40 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:04:16 by fnichola         ###   ########.fr       */
+/*   Updated: 2022/12/12 02:41:47 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 int main()
 {
 	// AAnimal a; // error: cannot declare variable ‘a’ to be of abstract type ‘AAnimal’
+	// const AAnimal* a = new AAnimal(); // error: invalid new-expression of abstract class type ‘AAnimal’
 	
 	debugPrint("\n---- Basic Test, addIdea and getIdea ----\n"); 
 
@@ -74,7 +75,5 @@ int main()
 	delete d2;
 	}
 
-	const Dog d;
-	
 	return 0;
 }
