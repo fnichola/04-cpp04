@@ -11,27 +11,31 @@
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
+#include "debugPrint.hpp"
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << "WrongAnimal default constructor called" << std::endl;
+	debugPrint("WrongAnimal default constructor called", BLU);
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& src)
 {
-	std::cout << "WrongAnimal copy constructor called" << std::endl;
+	debugPrint("WrongAnimal copy constructor called", BLU);
 	*this = src;
 }
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal destructor called" << std::endl;
+	debugPrint("WrongAnimal destructor called", BLU);
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs)
 {
-	std::cout << "WrongAnimal copy assignment operator called" << std::endl;
-	type = rhs.type;
+	debugPrint("WrongAnimal copy assignment operator called", BLU);
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 

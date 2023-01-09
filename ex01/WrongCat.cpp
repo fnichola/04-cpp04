@@ -33,7 +33,10 @@ WrongCat::~WrongCat()
 WrongCat& WrongCat::operator=(const WrongCat& rhs)
 {
 	std::cout << "WrongCat copy assignment operator called" << std::endl;
-	type = rhs.type;
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 

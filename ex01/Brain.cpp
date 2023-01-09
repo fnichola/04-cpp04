@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:56:57 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/08 06:33:01 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/08 09:43:21 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,12 @@ Brain::~Brain()
 Brain& Brain::operator=(const Brain& rhs)
 {
 	debugPrint("Brain copy assignment operator called", BLU);
-	for (int i = 0; i < numberOfIdeas; ++i)
+	if (this != &rhs)
 	{
-		ideas[i] = rhs.ideas[i];
+		for (int i = 0; i < numberOfIdeas; ++i)
+		{
+			ideas[i] = rhs.ideas[i];
+		}
 	}
 	return *this;
 }

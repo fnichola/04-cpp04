@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 01:47:40 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/07 03:52:12 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/09 02:38:51 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,7 @@
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-#define YEL "\e[0;33m"
-#define COLOR_RESET "\e[0m"
-
-void debugPrint(const std::string& str)
-{
-	std::cout << YEL + str + COLOR_RESET << std::endl;
-}
+#include "debugPrint.hpp"
 
 int main()
 {

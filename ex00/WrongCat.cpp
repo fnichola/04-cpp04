@@ -11,29 +11,33 @@
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+#include "debugPrint.hpp"
 
 WrongCat::WrongCat()
 	: WrongAnimal()
 {
-	std::cout << "WrongCat default constructor called" << std::endl;
+	debugPrint("WrongCat default constructor called", BLU);
 	type = "WrongCat";
 }
 
 WrongCat::WrongCat(const WrongCat& src)
 	: WrongAnimal(src)
 {
-	std::cout << "WrongCat copy constructor called" << std::endl;
+	debugPrint("WrongCat copy constructor called", BLU);
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat destructor called" << std::endl;
+	debugPrint("WrongCat destructor called", BLU);
 }
 
 WrongCat& WrongCat::operator=(const WrongCat& rhs)
 {
-	std::cout << "WrongCat copy assignment operator called" << std::endl;
-	type = rhs.type;
+	debugPrint("WrongCat copy assignment operator called", BLU);
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 

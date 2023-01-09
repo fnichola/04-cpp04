@@ -23,6 +23,8 @@ Animal::Animal()
 Animal::Animal(const Animal& src)
 {
 	debugPrint("Animal copy constructor called", BLU);
+	brain = NULL;
+	type = "Generic Animal (TM)";
 	*this = src;
 }
 
@@ -34,7 +36,13 @@ Animal::~Animal()
 Animal& Animal::operator=(const Animal& rhs)
 {
 	debugPrint("Animal copy assignment operator called", BLU);
-	type = rhs.type;
+	if (this != &rhs)
+	{
+		if (brain)
+			delete brain;
+		brain = new Brain(*rhs.brain);
+		type = rhs.type;
+	}
 	return *this;
 }
 

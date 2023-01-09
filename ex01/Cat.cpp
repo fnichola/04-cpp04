@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 03:56:25 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/08 06:33:56 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/08 09:45:48 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Cat::Cat(const Cat& src)
 	: Animal(src)
 {
 	debugPrint("Cat copy constructor called", BLU);
-	*this = src;
 }
 
 Cat::~Cat()
@@ -37,8 +36,7 @@ Cat::~Cat()
 Cat& Cat::operator=(const Cat& rhs)
 {
 	debugPrint("Cat copy assignment operator called", BLU);
-	type = rhs.type;
-	brain = new Brain(*rhs.brain);
+	Animal::operator=(rhs);
 	return *this;
 }
 

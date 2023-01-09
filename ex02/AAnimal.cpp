@@ -21,6 +21,7 @@ AAnimal::AAnimal()
 }
 
 AAnimal::AAnimal(const AAnimal& src)
+	: brain(NULL)
 {
 	debugPrint("AAnimal copy constructor called", BLU);
 	*this = src;
@@ -34,7 +35,13 @@ AAnimal::~AAnimal()
 AAnimal& AAnimal::operator=(const AAnimal& rhs)
 {
 	debugPrint("AAnimal copy assignment operator called", BLU);
-	type = rhs.type;
+	if (this != &rhs)
+	{
+		if (brain)
+			delete brain;
+		brain = new Brain(*rhs.brain);
+		type = rhs.type;
+	}
 	return *this;
 }
 

@@ -11,27 +11,31 @@
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "debugPrint.hpp"
 
 Animal::Animal()
 {
-	std::cout << "Animal default constructor called" << std::endl;
+	debugPrint("Animal default constructor called", BLU);
 }
 
 Animal::Animal(const Animal& src)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	debugPrint("Animal copy constructor called", BLU);
 	*this = src;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	debugPrint("Animal destructor called", BLU);
 }
 
 Animal& Animal::operator=(const Animal& rhs)
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
-	type = rhs.type;
+	debugPrint("Animal copy assignment operator called", BLU);
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 

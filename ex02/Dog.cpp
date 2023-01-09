@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 03:56:25 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:04:37 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/08 10:42:27 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ Dog::~Dog()
 Dog& Dog::operator=(const Dog& rhs)
 {
 	debugPrint("Dog copy assignment operator called", BLU);
-	type = rhs.type;
-	brain = new Brain(*rhs.brain);
+	AAnimal::operator=(rhs);
 	return *this;
 }
 

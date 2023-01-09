@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   debugPrint.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 02:51:58 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:01:44 by fnichola         ###   ########.fr       */
+/*   Created: 2022/12/08 06:15:24 by fnichola          #+#    #+#             */
+/*   Updated: 2022/12/08 06:52:13 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AANIMAL_HPP
-# define AANIMAL_HPP
+#include "debugPrint.hpp"
 
-#include <string>
-#include <iostream>
-#include "Brain.hpp"
-
-class AAnimal
+void debugPrint(const std::string& str, const std::string& color)
 {
-public:
-	AAnimal();
-	AAnimal(const AAnimal& src);
-	virtual ~AAnimal();
-	AAnimal& operator=(const AAnimal& rhs);
-
-	virtual std::string getType() const = 0;
-	virtual void makeSound() const = 0;
-	Brain* getBrain() const;
-
-protected:
-	std::string type;
-	Brain* brain;
-};
-
-#endif
+	std::cout << color + str + COLOR_RESET << std::endl;
+}

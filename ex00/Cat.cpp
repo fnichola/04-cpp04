@@ -6,34 +6,38 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 03:56:25 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/06 04:44:12 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/09 02:35:46 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "debugPrint.hpp"
 
 Cat::Cat()
 	: Animal()
 {
-	std::cout << "Cat default constructor called" << std::endl;
+	debugPrint("Cat default constructor called", BLU);
 	type = "Cat";
 }
 
 Cat::Cat(const Cat& src)
 	: Animal(src)
 {
-	std::cout << "Cat copy constructor called" << std::endl;
+	debugPrint("Cat copy constructor called", BLU);
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	debugPrint("Cat destructor called", BLU);
 }
 
 Cat& Cat::operator=(const Cat& rhs)
 {
-	std::cout << "Cat copy assignment operator called" << std::endl;
-	type = rhs.type;
+	debugPrint("Cat copy assignment operator called", BLU);
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 

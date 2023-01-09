@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 01:47:40 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:41:47 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/09 02:28:47 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ int main()
 	const AAnimal* d = new Dog();
 
 	c->getBrain()->addIdea("I want to eat birds.");
+	c->makeSound();
 	std::cout << c->getBrain()->getIdea(0) << std::endl;
 
 	d->getBrain()->addIdea("I want to chase cats.");
+	d->makeSound();
 	std::cout << d->getBrain()->getIdea(0) << std::endl;
 
 	delete c;
@@ -47,14 +49,14 @@ int main()
 	c->getBrain()->addIdea("I want to eat mice.");
 	std::cout << c->getBrain()->getIdea(0) << std::endl;
 
-	const Cat* c2 = new Cat(*c);
-	std::cout << c2->getBrain()->getIdea(0) << std::endl;
-	c2->getBrain()->setIdea(0, "Feathers are the best.");
+	Cat c2;
+	c2 = *c;
+	std::cout << c2.getBrain()->getIdea(0) << std::endl;
+	c2.getBrain()->setIdea(0, "Feathers are the best.");
 	std::cout << c->getBrain()->getIdea(0) << std::endl;
-	std::cout << c2->getBrain()->getIdea(0) << std::endl;
+	std::cout << c2.getBrain()->getIdea(0) << std::endl;
 
 	delete c;
-	delete c2;
 	}
 
 	debugPrint("\n---- Deep Copy (Dog) ----\n");
@@ -65,14 +67,14 @@ int main()
 	d->getBrain()->addIdea("I'm hungry");
 	std::cout << d->getBrain()->getIdea(0) << std::endl;
 
-	const Dog* d2 = new Dog(*d);
-	std::cout << d2->getBrain()->getIdea(0) << std::endl;
-	d2->getBrain()->setIdea(0, "Squirrel?!");
+	Dog d2;
+	d2 = *d;
+	std::cout << d2.getBrain()->getIdea(0) << std::endl;
+	d2.getBrain()->setIdea(0, "Squirrel?!");
 	std::cout << d->getBrain()->getIdea(0) << std::endl;
-	std::cout << d2->getBrain()->getIdea(0) << std::endl;
+	std::cout << d2.getBrain()->getIdea(0) << std::endl;
 
 	delete d;
-	delete d2;
 	}
 
 	return 0;

@@ -6,34 +6,38 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 03:56:25 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/06 04:45:31 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/09 02:36:32 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "debugPrint.hpp"
 
 Dog::Dog()
 	: Animal()
 {
-	std::cout << "Dog default constructor called" << std::endl;
+	debugPrint("Dog default constructor called", BLU);
 	type = "Dog";
 }
 
 Dog::Dog(const Dog& src)
 	: Animal(src)
 {
-	std::cout << "Dog copy constructor called" << std::endl;
+	debugPrint("Dog copy constructor called", BLU);
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog destructor called" << std::endl;
+	debugPrint("Dog destructor called", BLU);
 }
 
 Dog& Dog::operator=(const Dog& rhs)
 {
-	std::cout << "Dog copy assignment operator called" << std::endl;
-	type = rhs.type;
+	debugPrint("Dog copy assignment operator called", BLU);
+	if (this != &rhs)
+	{
+		type = rhs.type;
+	}
 	return *this;
 }
 
