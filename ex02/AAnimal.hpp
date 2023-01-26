@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:51:58 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:01:44 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 08:45:05 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include "Brain.hpp"
+
+class Brain;
 
 class AAnimal
 {
@@ -25,13 +26,12 @@ public:
 	virtual ~AAnimal();
 	AAnimal& operator=(const AAnimal& rhs);
 
-	virtual std::string getType() const = 0;
+	std::string getType() const;
 	virtual void makeSound() const = 0;
-	Brain* getBrain() const;
+	virtual Brain* getBrain() const = 0;
 
 protected:
 	std::string type;
-	Brain* brain;
 };
 
 #endif

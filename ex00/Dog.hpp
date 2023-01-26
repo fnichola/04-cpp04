@@ -23,7 +23,6 @@ public:
 	~Dog();
 	Dog& operator=(const Dog& rhs);
 
-	std::string getType() const;
 	void makeSound() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 03:56:25 by fnichola          #+#    #+#             */
-/*   Updated: 2023/01/08 10:42:07 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 08:46:01 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Cat::Cat()
 	: AAnimal()
 {
 	debugPrint("Cat default constructor called", BLU);
-	brain = new Brain();
+	m_brain = new Brain();
 	type = "Cat";
 }
 
@@ -25,28 +25,29 @@ Cat::Cat(const Cat& src)
 	: AAnimal(src)
 {
 	debugPrint("Cat copy constructor called", BLU);
-	*this = src;
+	m_brain = new Brain();
 }
 
 Cat::~Cat()
 {
 	debugPrint("Cat destructor called", BLU);
-	delete brain;
+	delete m_brain;
 }
 
 Cat& Cat::operator=(const Cat& rhs)
 {
 	debugPrint("Cat copy assignment operator called", BLU);
 	AAnimal::operator=(rhs);
+	*m_brain = *rhs.m_brain;
 	return *this;
-}
-
-std::string Cat::getType() const
-{
-	return type;
 }
 
 void Cat::makeSound() const
 {
 	std::cout << "MEOW MEOW!" << std::endl;
+}
+
+Brain* Cat::getBrain() const
+{
+	return m_brain;
 }

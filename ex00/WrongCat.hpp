@@ -23,7 +23,6 @@ public:
 	~WrongCat();
 	WrongCat& operator=(const WrongCat& rhs);
 
-	std::string getType() const;
 	void makeSound() const;
 };
 

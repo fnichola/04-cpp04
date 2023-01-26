@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:51:58 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/08 05:57:10 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 08:18:02 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ public:
 	~Dog();
 	Dog& operator=(const Dog& rhs);
 
-	std::string getType() const;
 	void makeSound() const;
+	Brain* getBrain() const;
+
+private:
+	Brain* m_brain;
 };
 
 #endif

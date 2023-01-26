@@ -23,7 +23,6 @@ public:
 	~Cat();
 	Cat& operator=(const Cat& rhs);
 
-	std::string getType() const;
 	void makeSound() const;
 };
 

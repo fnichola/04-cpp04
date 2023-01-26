@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AAnimal.cpp                                       :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 02:56:57 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/06 02:40:30 by fnichola         ###   ########.fr       */
+/*   Created: 2023/01/26 08:44:28 by fnichola          #+#    #+#             */
+/*   Updated: 2023/01/26 08:45:20 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,13 @@
 AAnimal::AAnimal()
 {
 	debugPrint("AAnimal default constructor called", BLU);
-	brain = NULL;
 	type = "Generic AAnimal (TM)";
 }
 
 AAnimal::AAnimal(const AAnimal& src)
-	: brain(NULL)
 {
 	debugPrint("AAnimal copy constructor called", BLU);
+	type = "Generic AAnimal (TM)";
 	*this = src;
 }
 
@@ -37,15 +36,12 @@ AAnimal& AAnimal::operator=(const AAnimal& rhs)
 	debugPrint("AAnimal copy assignment operator called", BLU);
 	if (this != &rhs)
 	{
-		if (brain)
-			delete brain;
-		brain = new Brain(*rhs.brain);
 		type = rhs.type;
 	}
 	return *this;
 }
 
-Brain* AAnimal::getBrain() const
+std::string AAnimal::getType() const
 {
-	return brain;
+	return type;
 }

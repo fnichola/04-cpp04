@@ -34,16 +34,8 @@ WrongCat::~WrongCat()
 WrongCat& WrongCat::operator=(const WrongCat& rhs)
 {
 	debugPrint("WrongCat copy assignment operator called", BLU);
-	if (this != &rhs)
-	{
-		type = rhs.type;
-	}
+	WrongAnimal::operator=(rhs);
 	return *this;
-}
-
-std::string WrongCat::getType() const
-{
-	return type;
 }
 
 void WrongCat::makeSound() const

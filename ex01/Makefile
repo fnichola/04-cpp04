@@ -6,7 +6,7 @@
 #    By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/09 18:01:32 by fnichola          #+#    #+#              #
-#    Updated: 2023/01/09 02:30:02 by fnichola         ###   ########.fr        #
+#    Updated: 2023/01/26 08:37:20 by fnichola         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,6 @@ SRCS = main.cpp \
 	Animal.cpp \
 	Dog.cpp \
 	Cat.cpp \
-	WrongAnimal.cpp \
-	WrongCat.cpp \
 	Brain.cpp \
 	debugPrint.cpp
 

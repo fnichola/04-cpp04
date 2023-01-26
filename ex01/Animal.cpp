@@ -16,14 +16,12 @@
 Animal::Animal()
 {
 	debugPrint("Animal default constructor called", BLU);
-	brain = NULL;
 	type = "Generic Animal (TM)";
 }
 
 Animal::Animal(const Animal& src)
 {
 	debugPrint("Animal copy constructor called", BLU);
-	brain = NULL;
 	type = "Generic Animal (TM)";
 	*this = src;
 }
@@ -38,9 +36,6 @@ Animal& Animal::operator=(const Animal& rhs)
 	debugPrint("Animal copy assignment operator called", BLU);
 	if (this != &rhs)
 	{
-		if (brain)
-			delete brain;
-		brain = new Brain(*rhs.brain);
 		type = rhs.type;
 	}
 	return *this;
@@ -58,5 +53,5 @@ void Animal::makeSound() const
 
 Brain* Animal::getBrain() const
 {
-	return brain;
+	return NULL;
 }

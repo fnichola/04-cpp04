@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:51:58 by fnichola          #+#    #+#             */
-/*   Updated: 2022/12/12 02:07:33 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 08:45:52 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ public:
 	~Cat();
 	Cat& operator=(const Cat& rhs);
 
-	std::string getType() const;
 	void makeSound() const;
+	Brain* getBrain() const;
+
+private:
+	Brain* m_brain;
 };
 
 #endif

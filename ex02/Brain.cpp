@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 02:56:57 by fnichola          #+#    #+#             */
-/*   Updated: 2023/01/08 10:01:39 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 08:08:15 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Brain& Brain::operator=(const Brain& rhs)
 	debugPrint("Brain copy assignment operator called", BLU);
 	if (this != &rhs)
 	{
+		debugPrint("Performing deep copy of brain contents", BLU);
 		for (int i = 0; i < numberOfIdeas; ++i)
 		{
 			ideas[i] = rhs.ideas[i];
@@ -53,7 +54,7 @@ void Brain::addIdea(const std::string& idea)
 		std::cerr << "This brain is full!" << std::endl;
 }
 
-const std::string& Brain::getIdea(const int index) const
+const std::string Brain::getIdea(const int index) const
 {
 	if (index < 0)
 	{

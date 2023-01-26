@@ -6,7 +6,7 @@
 /*   By: fnichola <fnichola@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 01:47:40 by fnichola          #+#    #+#             */
-/*   Updated: 2023/01/09 02:38:51 by fnichola         ###   ########.fr       */
+/*   Updated: 2023/01/26 07:29:21 by fnichola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ int main()
 	Cat c3;
 	debugPrint("Cat c4(c3);");
 	Cat c4(c3);
+
+	debugPrint("Cat c5;");
+	Cat c5;
+	debugPrint("c5 = c3;");
+	c5 = c3;
 
 	debugPrint("c->getType()");
 	std::cout << c->getType() << " " << std::endl;
